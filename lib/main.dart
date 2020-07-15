@@ -27,46 +27,11 @@ class Content extends StatefulWidget {
 }
 
 class _ContentState extends State<Content> {
-  Widget firstDice;
-
-  Widget secondDice;
-
-  @override
-  void initState() {
-    firstDice =   Image.asset("images/dice1.png", height: 200, width: 200);
-    secondDice = Image.asset("images/dice1.png", height: 200, width: 200);
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.redAccent,
-      appBar: AppBar(
-        title: Text("Dicee"),
-        centerTitle: true,
-        backgroundColor: Colors.redAccent,
-      ),
-      body: Center(
-          child: InkWell(
-            onTap: (){
-              setState(() {
-                firstDice = randomDice();
-                secondDice = randomDice();
-              });
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          firstDice,
-          secondDice
-        ],
-      ),
-          )),
+      appBar: AppBar(title: Text("Dice App"),),
+      body: Container(),
     );
-  }
-
-  Widget randomDice(){
-    int index = Random().nextInt(6) + 1;
-    return Image.asset("images/dice${index}.png", height: 200, width: 200);
   }
 }
